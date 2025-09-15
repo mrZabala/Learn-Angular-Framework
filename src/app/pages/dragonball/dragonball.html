@@ -1,0 +1,36 @@
+<h1 class="mb-4">Dragon Ball Page</h1>
+
+<section class="row g-3">
+  <div class="col-12 col-sm-6">
+    <h3>Agregar: {{ name() }}</h3>
+    <input type="text" [value]="name()" (input)="name.set($any($event.target).value)" class="form-control mb-2"
+      placeholder="Nombre" />
+    <input type="number" [value]="power()" (input)="power.set($any($event.target).value)" class="form-control mb-2"
+      placeholder="Poder" />
+    <button class="btn btn-primary w-100" (click)="aggCharacter()">
+      Agregar
+    </button>
+  </div>
+
+  <div class="col-12 col-sm-6">
+    <h3>Listado</h3>
+    <ul class="list-group list-group-numbered">
+      @for(person of characters(); track person.id; let idx = $count)
+      {
+      @if(person.power > 500 )
+      {
+      <li>
+        <span>{{ idx + 1 }} - {{ person.name }}</span>
+        <strong [class.text-danger]="person.power > 500" [class.text-danger]="person.power < 500">
+          ({{ person.power }})
+        </strong>
+      </li>
+      }
+      @else
+      {
+      <li><strong>No na</strong></li>
+      }
+      }
+    </ul>
+  </div>
+</section>
