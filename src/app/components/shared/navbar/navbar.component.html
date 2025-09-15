@@ -1,0 +1,20 @@
+<style>
+    nav a{
+        color: black;
+        text-decoration: none;
+    }
+
+    nav a.active{
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<nav>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Counter</a>
+  <br>
+  <a routerLink="/task" routerLinkActive="active">Tasks</a>
+  <br>
+  <a routerLink="/dragonball" routerLinkActive="active">Dragon ball</a>
+  <br>
+  <a routerLink="/dragonball-super" routerLinkActive="active">Dragon ball Super</a>
+</nav>
