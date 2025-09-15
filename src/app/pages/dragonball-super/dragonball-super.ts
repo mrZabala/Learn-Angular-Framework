@@ -12,7 +12,5 @@ import { dragonBallService } from "../../services/dragonball.service"
 })
 export class DragonballSuper {
   public dragonBallService = inject(dragonBallService);
-
-
 }
 
